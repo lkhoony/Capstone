@@ -1,6 +1,7 @@
 # Capstone Design
 
 🥇 소프트웨어 융합대학 창의설계경진대회 최우수상
+
 🥉 교내 창의설계경진대회 동상
 
 [![GitHub license](https://img.shields.io/github/license/lkhoony/EV-obseoye?style=plastic)](https://github.com/lkhoony/Capstone)
@@ -10,7 +11,7 @@
   - 전력 사용량 패턴 및 전력 사용 요금 분석
   - 예측 모델을 활용한 전력 사용량 예측 및 CCHP 발전 스케줄링
   - CCHP 발전으로 발생하는 경제적 이득 분석
-  - 
+  
 ![image](https://user-images.githubusercontent.com/66773320/107849755-c068fb80-6e40-11eb-8475-4122243225ef.png)
 
 ![image](https://user-images.githubusercontent.com/66773320/107849774-daa2d980-6e40-11eb-9459-2650928c52c7.png)
