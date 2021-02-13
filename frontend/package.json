@@ -1,0 +1,52 @@
+{
+  "name": "vue-black-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A sample admin dashboard based on black dashboard UI template",
+  "author": "cristian.jora <joracristi@gmail.com>",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "e2e": "node test/e2e/runner.js",
+    "lint": "vue-cli-service lint",
+    "dev": "vue-cli-service serve --open",
+    "lint-fix": "vue-cli-service lint --fix"
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "bootstrap": "^4.5.3",
+    "bootstrap-vue": "^2.19.0",
+    "chart.js": "^2.9.4",
+    "element-ui": "^2.14.1",
+    "next-redux-wrapper": "^6.0.2",
+    "react-redux": "^7.2.2",
+    "register-service-worker": "^1.7.1",
+    "vue": "^2.6.12",
+    "vue-bootstrap-datetimepicker": "^5.0.1",
+    "vue-bootstrap-sidebar": "^1.0.9",
+    "vue-chartjs": "^3.5.1",
+    "vue-daum-postcode": "^0.9.0",
+    "vue-i18n": "^8.22.1",
+    "vue-router": "^3.4.9",
+    "vue-router-prefetch": "^1.6.0",
+    "vue-sidebar-menu": "^4.7.3",
+    "vue-tree-navigation": "^4.0.1",
+    "vue2-transitions": "^0.3.0",
+    "vuejs-daum-postcode": "^1.0.4"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.5.8",
+    "@vue/cli-plugin-eslint": "^4.5.8",
+    "@vue/cli-plugin-pwa": "^4.5.8",
+    "@vue/cli-service": "^4.5.8",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.0",
+    "vue-cli-plugin-i18n": "^1.0.1",
+    "vue-template-compiler": "^2.6.12"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 11"
+  ]
+}

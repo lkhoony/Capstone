@@ -1,50 +1,61 @@
-# flask-vue-argon
+# Capstone Design
 
-## Project Sturcture
+🥇 소프트웨어 융합대학 창의설계경진대회 최우수상
+🥉 교내 창의설계경진대회 동상
 
-```bash
-.
-├── README.md
-├── backend
-│   ├── app.py
-│   ├── back.dev.Dockerfile
-│   └── requirements.txt
-├── docker-compose.yml
-├── frontend
-│   ├── CHANGELOG.md
-│   ├── ISSUES_TEMPLATE.md
-│   ├── LICENSE.md
-│   ├── README.md
-│   ├── babel.config.js
-│   ├── front.dev.Dockerfile
-│   ├── node_modules
-│   ├── package.json
-│   ├── public
-│   ├── src
-│   ├── vue.config.js
-│   └── yarn.lock
-└── requirements.txt
+[![GitHub license](https://img.shields.io/github/license/lkhoony/EV-obseoye?style=plastic)](https://github.com/lkhoony/Capstone)
+
+세종대학교 교내 전력 사용량 예측을 통한 경제성 분석 및 삼중 열 병합 발전(CCHP) 스케줄링 웹 어플리케이션  
+
+  - 전력 사용량 패턴 및 전력 사용 요금 분석
+  - 예측 모델을 활용한 전력 사용량 예측 및 CCHP 발전 스케줄링
+  - CCHP 발전으로 발생하는 경제적 이득 분석
+  - 
+![image](https://user-images.githubusercontent.com/66773320/107849755-c068fb80-6e40-11eb-8475-4122243225ef.png)
+
+![image](https://user-images.githubusercontent.com/66773320/107849774-daa2d980-6e40-11eb-9459-2650928c52c7.png)
+
+### Tech
+
+* Vue.js - 사용자의 요청 및 데이터를 API 서버에 전송 및 그래프 시각화
+* Flask - Front End에서의 요청을 받아 그래프를 전송하는 API 구현
+* MySQL - 전력 사용량 데이터 저장을 위한 DBMS
+* Sklearn - 전력 사용량 예측 모델 개발을 위한 라이브러리
+* Plotly - 데이터 시각화 라이브러리
+* Docker - 개발 환경 구축 및 배포
+
+### Development
+Open your favorite Terminal and run these commands.
+
+First Tab:
+```sh
+cd frontend
+npm run serve
 ```
 
-## how to run?
+Second Tab:
+```sh
+cd backend
+python "app.py"
+```
 
-- Dockerfile로 실행
+### Docker
 
-    ```bash
-    $ docker-compose --buid up
-    ```
+또한 아래의 명령어를 실행하여 docker-compose.yml 파일을 읽어 개발환경을 구축하고 웹 앱과 API 서버 컨테이너를 실행할 수 있다.
 
-- 로컬 개발환경에서 실행
+```sh
+cd capstone
+docker-compose up -d
+```
 
-    ```bash
-    # frontend 폴더에서
-    $ yarn install && yarn run serve
-    ```
+### Todos
 
-    ```bash
-    # backend 폴더에서
-    $ python3 -m pip virtualenv 
-    $ virtualenv venv && source venv/bin/activate
-    (venv) $ pip install flask flask-cors python-dotenv
-    (venv) $ python3 app.py
-    ```
+ - 회원 가입 시 전력 사용량 데이터 입력받아 예측 모델 생성
+
+License
+----
+
+MIT
+
+
+**Free Software, Hell Yeah!**
