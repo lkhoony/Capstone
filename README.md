@@ -49,6 +49,13 @@ cd capstone
 docker-compose up -d
 ```
 
+실행
+
+```sh
+localhost:8080
+```
+
+
 ### Todos
 
  - 회원 가입 시 전력 사용량 데이터 입력받아 예측 모델 생성
