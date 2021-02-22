@@ -7,7 +7,7 @@
 [![GitHub license](https://img.shields.io/github/license/lkhoony/EV-obseoye?style=plastic)](https://github.com/lkhoony/Capstone)
 
 
-- [전력 사용량 예측 모델 학습 과정] (https://github.com/lkhoony/Capstone_Prediction_Model)
+- [전력 사용량 예측 모델 학습 과정](https://github.com/lkhoony/Capstone_Prediction_Model)
 
 세종대학교 교내 전력 사용량 예측을 통한 경제성 분석 및 삼중 열 병합 발전(CCHP) 스케줄링 웹 어플리케이션  
 
