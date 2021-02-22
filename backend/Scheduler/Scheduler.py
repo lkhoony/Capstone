@@ -8,7 +8,8 @@ import datetime
 import json
 import pandas as pd
 import json
-from sklearn.externals import joblib
+# from sklearn.externals import joblib
+import joblib
 from Predictor.Predictor import *
 from AccessDB.AccessDB import *
 
@@ -109,8 +110,8 @@ def startScheduler() :
 
         # prediction
 
-        modelDir = 'C:\\capstone\\backend\\PredictionModel\\sejong_power_consumption_model2.pkl'
-        loadedModel = joblib.load(modelDir)
+        modelName = 'sejong_power_consumption_model2.pkl'
+        loadedModel = joblib.load(modelName)
 
         month = date.month
         hour = date.hour

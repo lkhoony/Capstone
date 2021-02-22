@@ -5,7 +5,8 @@ import pandas as pd
 import numpy as np
 import json
 import pickle
-from sklearn.externals import joblib
+# from sklearn.externals import joblib
+import joblib
 import os
 import sys
 
@@ -16,6 +17,7 @@ from ElecFeeCalculator.ElecFeeCalculator import *
 from InputDataGetter.InputDataGetter import *
 from Predictor.Predictor import *
 from GasFeeCalculator.GasFeeCalculator import *
+
 # class Visualize:
     
 #     # plot object getter
@@ -43,6 +45,8 @@ class Plot :
     # payment : 요금제 유형
     # userId : 사용자 ID
     # period : 경제성 분석 주기(연, 월, 일)
+
+    modelName = 'sejong_power_consumption_model2.pkl'
 
     def createBarLinePlot(self,startDate,endDate,contractElec,payment,userId,period) : 
         
@@ -146,10 +150,10 @@ class Plot :
 
 
     # 2. 전력 사용량 패턴 분석 > 예측 전력 사용량 비교 plot
-    def createCompareBarPlot(self,startDate,endDate,contractElec,userId,payment,period,modelName) :
+    def createCompareBarPlot(self,startDate,endDate,contractElec,userId,payment,period) :
         
-        modelDir = 'C:\\capstone\\backend\\PredictionModel\\' + modelName
-        loadedModel = joblib.load(modelDir)
+        modelName = 'sejong_power_consumption_model.pkl'
+        loadedModel = joblib.load(modelName)
 
         connector = DBConnector()
 
@@ -515,9 +519,7 @@ class Plot :
     # 4. CCHP 스케줄링 > 전력 사용량 예측 Plot
     def createPredictionPlot(self,predictDate,payment) : 
 
-        modelDir = 'C:\\capstone\\backend\\PredictionModel\\sejong_power_consumption_model2.pkl'
-
-        loadedModel = joblib.load(modelDir)
+        loadedModel = joblib.load(self.modelName)
 
         inputDataGetter = InputDataGetter
 
@@ -626,9 +628,7 @@ class Plot :
     # 5. CCHP 스케줄링 > CCHP 스케줄링 Plot
     def createStackBarPlot(self,predictDate,payment) : 
 
-        modelDir = 'C:\\capstone\\backend\\PredictionModel\\sejong_power_consumption_model2.pkl'
-
-        loadedModel = joblib.load(modelDir)
+        loadedModel = joblib.load(self.modelName)
 
         inputDataGetter = InputDataGetter
 
@@ -748,9 +748,7 @@ class Plot :
     # 7. CCHP 스케줄링 > 입력 데이터 통계
     def createSchLinePlot(self,predictDate) :
         
-        modelDir = 'C:\\capstone\\backend\\PredictionModel\\sejong_power_consumption_model2.pkl'
-
-        loadedModel = joblib.load(modelDir)
+        loadedModel = joblib.load(self.modelName)
 
         inputDataGetter = InputDataGetter
 

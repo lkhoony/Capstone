@@ -17,47 +17,12 @@ app = Flask(__name__)
 # enable CORS
 CORS(app, resources={r'/*': {'origins': '*'}})
 
-# login route
-# @app.route('/login', methods=['GET','POST'])
-# def login():
-#     # if request.method == 'POST':
-
-#         # session에 id,pw를 저장
-#         # session['id'] = request.form['id']
-#         # session['password'] = request.form['password']
-
-#     # 요청 url로 다시 redirect
-#     return redirect(url_for("http://localhost:8080"))
-
-# # logout route
-# @app.route('/logout', methods=['GET','POST'])
-# def logout():
-#     if request.method == 'POST':
-#         session.pop('id',None)
-#         # return redirect(url_for(request.url))
-#     return redirect(url_for("http://localhost:8080/#/electric"))
-
-# # isLogOn route
-# # login 상태인지 확인
-# @app.route('/isLogOn', methods=['GET','POST'])
-# def isLogOn():
-
-#     if 'id' in session :
-#         id = session['id']
-#         # 세션에 있을 경우
-#         # return True
-#     else :
-#         print('test')
-#         # return False
-
-
 # start scheduler
 startScheduler()
 
 # 1. electric/pattern 요청에 대한 그래프를 반환
 @app.route('/electric/pattern', methods=['GET','POST'])
 def createBarLinePlot():
-    
     if(request.method== 'POST') :
         data = request.get_json()
         startDate = data['startDate']
@@ -71,6 +36,7 @@ def createBarLinePlot():
 
     # print(request.url) #localhost:5000/electric/pattern
     # print(a)
+    print("createBarLinePlot")
     return graphJSON
  
 # 2. electric/compare요청에 대한 그래프를 반환
@@ -88,8 +54,7 @@ def createCompareBarPlot():
 
     plotCreator = Plot()
 
-    modelName = 'sejong_power_consumption_model.pkl'  
-    graphJSON = plotCreator.createCompareBarPlot(startDate,endDate,contractElec,'abc',payment,period,modelName)
+    graphJSON = plotCreator.createCompareBarPlot(startDate,endDate,contractElec,'abc',payment,period)
 
     print(request.url) #localhost:5000/electric/pattern
     return graphJSON

@@ -39,3 +39,5 @@ plotly
 lightgbm
 sklearn
 apscheduler
+joblib
+cryptography

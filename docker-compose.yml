@@ -1,6 +1,23 @@
 version: '3.7'
 
 services:
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "1234"
+      # MYSQL_USER: "root"
+      # MYSQL_PASSWORD: "1234"
+      MYSQL_DATABASE: "capstone"
+
+    volumes:
+      - "./sql/:/docker-entrypoint-initdb.d/"
+
+    ports:
+      - 3306:3306
+    expose:
+      - 3306
+    container_name: my_db
+
   frontend:
     container_name: my-front
     build:
@@ -15,6 +32,7 @@ services:
 
   backend:
     container_name: my-back
+    restart: always
     build:
       context: backend
       dockerfile: back.dev.Dockerfile
@@ -23,7 +41,9 @@ services:
     ports:
       - 5000:5000
     volumes:
-    - ./backend:/www
+      - ./backend:/www
+    links:
+      - db
     depends_on:
       - frontend
-      
+      - db

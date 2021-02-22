@@ -9,12 +9,13 @@ class DBConnector:
     
 #   private member variable
 
-    __host = '127.0.0.1'
+    __host = 'db'
     __user = 'root'
     __password = '1234'
     __db = 'capstone'
     __charset = 'utf8'
-        
+    __port = 3306
+
     def __init__(self) :
         
         print('init DBConnector')
@@ -23,7 +24,7 @@ class DBConnector:
         
         cursorclass = pymysql.cursors.DictCursor
         
-        conn = pymysql.connect(host=self.__host, user=self.__user, password=self.__password,
+        conn = pymysql.connect(host=self.__host, port = self.__port, user=self.__user, password=self.__password,
 
                        db=self.__db, charset=self.__charset,cursorclass=cursorclass)
         
